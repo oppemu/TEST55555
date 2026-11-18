@@ -1,0 +1,5 @@
+pdfmake 0.2.20
+Source: https://registry.npmjs.org/pdfmake/-/pdfmake-0.2.20.tgz
+Browser build, MIT license included. No external URLs/fonts used at runtime. Fonts existing TH Sarabun New under assets/report-reference/fonts license.
+e6c91fdad0e095f4aa307a9630be4b20763d82e7520f9090ec33802b30011857  pdfmake-0.2.20.tgz
+c2fd3a5e24db096c9139bb7d266765de433b0b866d03ba356c2ef4d9ae1a53b7  pdfmake.min.js

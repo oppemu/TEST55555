@@ -1,0 +1,57 @@
+/* Report-view interaction follows the waste app's separate report-view and A4 paper surface.
+   The document itself is the backend-generated PDF, never a recreated HTML preview. */
+.pdf-report-view{max-width:1200px;margin:0 auto;padding:20px;color:#18231b}
+.pdf-report-view[hidden],.contractor-shell[hidden]{display:none!important}
+.pdf-report-controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 auto 20px;max-width:1050px}
+.pdf-report-controls h1{flex:1;margin:0;font:600 22px Anuphan,Tahoma,sans-serif;text-align:center}
+.pdf-report-controls button,.pdf-report-download{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 16px;border:1px solid #a4c579;border-radius:6px;font:500 16px Anuphan,Tahoma,sans-serif;text-decoration:none;color:#244c24;background:#fff;cursor:pointer}
+.pdf-report-download{background:#edf4e6}
+.pdf-report-paper{box-sizing:border-box;width:210mm;max-width:100%;height:min(1123px,calc(100dvh - 150px));min-height:420px;margin:20px auto;background:#fff;box-shadow:0 2px 15px #00000012;overflow:hidden}
+.pdf-report-frame{display:block;width:100%;height:100%;border:0;background:#fff}
+.pdf-report-fallback{max-width:210mm;margin:12px auto 0;text-align:center;font-size:14px;color:#405146}
+.pdf-report-fallback p{margin:0 0 6px}.pdf-report-fallback a{color:#294d3c;text-underline-offset:3px}
+@media(max-width:600px){.pdf-report-view{padding:12px}.pdf-report-controls{gap:8px;margin-bottom:12px}.pdf-report-controls h1{order:-1;flex-basis:100%;font-size:20px}.pdf-report-controls button,.pdf-report-download{flex:1;font-size:15px;padding:10px}.pdf-report-paper{margin:12px auto;min-height:380px;height:calc(100dvh - 190px)}}
+@media print{.pdf-report-view{display:none!important}}
+.local-report-note,.local-report-message{max-width:1050px;margin:10px auto;color:#354332}.local-report-message{color:#7a2e12;white-space:pre-wrap}.local-report-paper{box-sizing:border-box;width:210mm;max-width:100%;min-height:297mm;padding:25mm 10mm 15mm;margin:20px auto;background:#fff;color:#111;box-shadow:0 2px 15px #0002;font:16pt/1.3 Sarabun,'TH Sarabun New',Tahoma,sans-serif;overflow-wrap:anywhere}.local-report-paper header{padding:0;margin:0 0 16px;background:none;border:0;text-align:center}.local-report-paper h1,.local-report-paper h2{font:700 16pt/1.3 Sarabun,'TH Sarabun New',Tahoma,sans-serif;color:#111;margin:10px 0 4px}.local-report-paper p{font:inherit;white-space:pre-wrap;margin:4px 0 10px}.local-report-paper table{width:100%;border-collapse:collapse;font-size:12pt}.local-report-paper td,.local-report-paper th{border:1px solid #555;padding:4px;text-align:left}.local-report-paper .planned{background:#d9ead3;text-align:center}.local-report-table{overflow:auto}.local-report-paper footer{font-size:10pt;margin-top:25px;border-top:1px solid #999;padding-top:8px}.local-report-signature{text-align:right;margin-top:25px}@media(max-width:600px){.local-report-paper{padding:18px 12px;font-size:14pt}.local-report-paper h1,.local-report-paper h2{font-size:14pt}.local-report-paper table{min-width:650px}.local-report-paper section{overflow:auto}}
+@font-face{font-family:Sarabun;src:url('assets/Sarabun-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:Sarabun;src:url('assets/Sarabun-Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}.local-report-signature{text-align:center}.local-report-paper footer{border-top:0}
+/* User-specified report type: exactly 15 CSS px, not 15 pt. */
+@font-face{font-family:'TH Sarabun New';src:url('assets/THSarabunNew.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'TH Sarabun New';src:url('assets/THSarabunNewBold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
+.local-report-paper,.local-report-paper *{font-family:'TH Sarabun New',serif!important;font-size:15px!important}
+/* Footer stays in normal flow: bottom-right on short reports, below long content. */
+.local-report-paper{display:flex;flex-direction:column;padding-bottom:5mm}
+.local-report-paper>header,.local-report-paper>section,.local-report-paper>p{flex-shrink:0}
+.local-report-paper footer{margin-top:auto;padding-top:8mm;text-align:right;font-size:14px!important;line-height:1.2}
+.local-report-view .pdf-report-controls{max-width:210mm;justify-content:center;gap:8px;margin-bottom:12px}
+.local-report-view .pdf-report-controls h1{order:-1;flex:0 0 100%;margin-bottom:4px}
+.local-report-view .pdf-report-controls button{flex:0 1 auto;min-width:120px}
+.local-report-view .local-report-note,.local-report-view .local-report-message{max-width:210mm}
+@media(max-width:600px){.local-report-view .pdf-report-controls{gap:8px}.local-report-view .pdf-report-controls button{flex:1 1 120px}}
+
+/* Latest instruction: all report text regular weight; footer remains 14px. */
+.local-report-paper,.local-report-paper *{font-weight:400!important}
+/* A4 outer margins: top20mm, right20mm, bottom5mm, left30mm. */
+.local-report-view{overflow-x:auto}
+.local-report-paper{width:210mm;min-width:210mm;max-width:none;min-height:297mm;padding:20mm 20mm 5mm 30mm}
+.local-report-paper table{min-width:0}
+.local-report-paper>section{overflow:visible}
+
+.local-report-view [hidden]{display:none!important}
+.local-pdf-frame{display:block;width:100%;height:calc(100vh - 120px);min-height:540px;border:0;background:#e5e7eb}
+
+/* v58: transient HTML fallback matches report typography; final preview uses actual PDF. */
+.local-report-paper,.local-report-paper *{font-size:16px!important;}
+.local-report-paper h1,.local-report-paper h2,.local-report-paper th{font-weight:700!important;color:#000!important;}
+.local-report-paper section{margin:0!important;}
+.local-report-paper h2{margin:1.15em 0 0!important;}
+.local-report-paper p{margin:0!important;line-height:1.15;}
+.local-report-paper footer{font-size:14px!important;}
+
+.local-report-paper h2.report-subheading{margin-top:0!important;}
+
+.local-report-paper,.local-report-paper *,.local-report-paper footer{font-size:18px!important;}
+
+.local-report-paper thead th{text-align:center!important;}
+
+.local-report-signature{width:400px;max-width:100%;margin-left:auto!important;margin-right:auto!important;}
+.local-report-signature p:first-child,.local-report-signature p:last-child{text-align:left!important;}

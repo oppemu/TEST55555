@@ -1,0 +1,114 @@
+/* โหลด Anuphan สำหรับหน้าจอเท่านั้น หากโหลดออนไลน์ไม่ได้จะ fallback Tahoma/sans-serif; ไม่แก้ฟอนต์ใน PDF ซึ่งฝัง Sarabun แยกไว้ */
+/* ธีมหน้าจอร่วมทุกโมดูล; ไม่เปลี่ยนแบบพิมพ์รายงานทางการที่ใช้ TH Sarabun */
+@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&display=swap');
+@media screen {
+ body,input,select,textarea,button,dialog{font-family:Anuphan,Tahoma,sans-serif!important;}
+ .thai-date-display{display:block;color:#52675d;font-size:0.875rem;line-height:1.5;margin:4px 0 8px;}
+}
+
+/* ขนาดอ่านบนจอ PC เท่านั้น ไม่ขยายหน้า PDF ที่ต้องคงหน้ากระดาษ */
+@media screen and (min-width:1024px){
+ body{font-size:18px;} input,select,textarea,button,.button{font-size:18px!important;}
+ label,.field-label,.form-label{font-size:18px!important;line-height:1.55;}
+ .card,.card-title,.module-toolbar h2{font-size:21px;}
+ .sidebar a,.nav-link{font-size:18px;}
+}
+
+/* v2.3.7 อ่านชัดบน PC: สีเข้มและน้ำหนักปกติ ไม่ใช้ตัวบางจาง */
+@media screen and (min-width:1024px){
+ body{font-size:20px;color:#17251e;font-weight:500;}
+ p,label,small,.muted,.hint,.help,.field-label,.form-label,.thai-date-display{color:#26382e;font-weight:500;}
+ input,select,textarea,button,.button,label,.field-label,.form-label{font-size:20px!important;}
+ .sidebar a,.nav-link{font-size:19px;color:#24382d;font-weight:500;}
+ .card-title,.module-toolbar h2{font-size:24px;font-weight:650;}
+}
+
+/* v2.4.0: พื้นขาว ปุ่มเขียวอ่อนตามโลโก้ ใช้ตัวอักษรเข้มเพื่อให้อ่านง่าย */
+@media screen {
+ :root{--mu-accent:#a4c579;--mu-accent-hover:#b7d691;--mu-text:#202820;--mu-edge:#dbe2d7;--mu-ease:cubic-bezier(.22,1,.36,1);--bg:#fff;--primary:#44632c;--secondary:#a4c579;--ink:#202820;--line:#dbe2d7;}
+ body{background:#fff!important;color:var(--mu-text)!important;}
+ .app-shell,.masthead,.bottom-nav,.card,.form-container,.container,.form-card,.home-dashboard{background-color:#fff!important;}
+ h1,h2,h3,.card-title,.field-label,.form-label{color:var(--mu-text);}
+ /* ไม่เปลี่ยนสีปุ่มลบหรือข้อความเตือน ซึ่งยังต้องแยกความหมายจากปุ่มทั่วไป */
+ button:not(.danger):not(.delete-btn):not(.remove-btn),.button,.btn-submit,.btn-confirm,.theme-confirm-btn,.popup-confirm-btn{background-color:#fff!important;background-image:none!important;color:#203019!important;border-color:var(--mu-accent)!important;}
+ .text-button,.back-button,.module-profile,.profile-chip,.bottom-nav button,.bottom-nav a,.provider-btn,.category-btn,.qc-btn{background-color:#fff!important;color:var(--mu-text)!important;border-color:var(--mu-edge)!important;}
+ .card-icon,.nav-icon{color:#567a35;}
+ .card{border-color:var(--mu-edge);box-shadow:0 2px 8px #21331804;}
+ button,.button,.card,.back-button,.bottom-nav a{transition:transform .22s var(--mu-ease),box-shadow .22s var(--mu-ease),background-color .22s ease,border-color .22s ease;}
+ button:focus-visible,.button:focus-visible,.card:focus-visible,a:focus-visible{outline:3px solid #526f2b!important;outline-offset:4px!important;}
+ button:disabled,.button[aria-disabled=true]{cursor:not-allowed;opacity:.55;}
+ button:not(:disabled):active,.button:not([aria-disabled=true]):active,.card:active{transform:translateY(1px) scale(.98);box-shadow:inset 0 2px 5px #20301926;}
+ .card-icon,.nav-icon,.popup-icon,.emoji,[data-emoji]{display:inline-block;transform-origin:center;transition:transform .32s var(--mu-ease);}
+ .card:focus-visible .card-icon,.bottom-nav a:focus-visible .nav-icon{transform:translateY(-3px) rotate(-5deg);}
+ .masthead,.bottom-nav{transition:width .3s var(--mu-ease)!important;}
+ #profile-dialog{border-top-color:var(--mu-accent)!important;text-align:left;}
+ .profile-entry-brand{text-align:center;margin:0 0 24px;}
+ .profile-entry-logo{display:block;width:90px;height:90px;object-fit:contain;margin:0 auto 16px;}
+ #profile-dialog .profile-entry-brand h2{font-size:clamp(21px,3vw,25px)!important;font-weight:600!important;margin-bottom:8px!important;}
+ #profile-dialog .dialog-intro{color:#566052;font-size:15px!important;margin:0;}
+ #profile-name{width:100%;min-height:54px;background:#fff;font-size:20px!important;}
+ #roster-options[hidden]{display:none!important;}
+}
+@media screen and (hover:hover) and (pointer:fine){
+ button:not(:disabled):not(.danger):not(.delete-btn):not(.remove-btn):hover,.button:not([aria-disabled=true]):hover{background-color:#f4f8ef!important;transform:translateY(-2px);box-shadow:0 6px 16px #253b1826;}
+ .card:hover{transform:translateY(-2px);border-color:#a4c579;box-shadow:0 8px 24px #253b1810;}
+ .card:hover .card-icon,.bottom-nav a:hover .nav-icon,.bottom-nav button:hover .nav-icon,.popup-icon:hover,.emoji:hover,[data-emoji]:hover{transform:translateY(-3px) rotate(-6deg) scale(1.08);}
+}
+/* เคารพผู้ที่ปิดแอนิเมชัน ไม่ขยับปุ่ม ไอคอน หรือแผงเมนู */
+@media screen and (prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important;}
+ button:active,.button:active,.card:active,.card:hover,.card-icon,.nav-icon,.popup-icon,.emoji,[data-emoji]{transform:none!important;}
+ .card:hover .card-icon,.card:focus-visible .card-icon,.bottom-nav a:hover .nav-icon,.bottom-nav a:focus-visible .nav-icon,.bottom-nav button:hover .nav-icon,.popup-icon:hover,.emoji:hover,[data-emoji]:hover{transform:none!important;}
+}
+
+/* v2.4.2: ปุ่มขาวตามปกติ เขียวเฉพาะเลือก/กด พร้อมตัวอักษรขาวที่อ่านชัด */
+@media screen{
+ :root{--mu-selected:#46752d;}
+ body button:not(.danger):not(.delete-btn):not(.remove-btn),body .button,body .popup-content button,body dialog button{background:#fff!important;color:#203019!important;border:1px solid #a4c579!important;}
+ body button:not(:disabled):active,body .button:not([aria-disabled=true]):active,body button[aria-pressed=true],body button[aria-selected=true],body button[aria-current],body button.selected,body button.is-selected,body button.active,body .option-card:has(input:checked){background:var(--mu-selected)!important;color:#fff!important;border-color:var(--mu-selected)!important;}
+ body button:not(:disabled):active,body .button:not([aria-disabled=true]):active{transform:translateY(2px) scale(.96)!important;box-shadow:inset 0 3px 8px #13240d55!important;}
+ body button[aria-pressed=true] *,body button[aria-selected=true] *,body button.selected *,body button.active *{color:inherit!important;}
+ /* ฟิลด์เรียงทีละช่อง ไม่เปลี่ยนกราฟ ตารางข้อมูล หรือกลุ่มปุ่มใน popup */
+ form .grid,form .row,form .form-row,form .fields,form .form-grid,.form-container .row,.form-container .fields,.form-card .form-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:16px!important;}
+ form .grid>*,form .row>*,form .form-row>*,form .fields>*,form .form-grid>*{grid-column:1!important;width:100%;min-width:0;}
+ body.profile-required>.app-shell{visibility:hidden!important;pointer-events:none!important;}
+ body.profile-required{background:#fff!important;}
+ body.profile-required #profile-dialog::backdrop{background:#fff!important;}
+}
+@media screen and (hover:hover) and (pointer:fine){
+ body button:not(:disabled):hover,body .button:not([aria-disabled=true]):hover{border-color:#46752d!important;box-shadow:0 6px 16px #253b1826;}
+ body button[aria-pressed=true]:hover,body button[aria-selected=true]:hover,body button.selected:hover,body button.active:hover{background:#46752d!important;color:#fff!important;}
+}
+@media screen and (prefers-reduced-motion:reduce){
+ body button:hover,body button:active,body .button:hover,body .button:active{transform:none!important;}
+}
+
+/* v2.4.4: plain name suggestions, not boxed action cards. Scoped to profile only. */
+@media screen {
+ #profile-dialog .profile-entry-logo{width:132px;height:132px;margin-bottom:18px;}
+ #profile-dialog #roster-options{border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;padding:0!important;}
+ #profile-dialog #roster-options button,#profile-dialog #roster-options button:hover,#profile-dialog #roster-options button:active{
+  border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;color:#222!important;transform:none!important;
+  padding:10px 4px!important;text-align:left;min-height:44px;font-size:18px!important;font-weight:400!important;
+ }
+ #profile-dialog #roster-options button:hover{text-decoration:underline;text-underline-offset:4px;}
+ #profile-dialog #roster-options button:focus-visible{outline:2px solid #46752d!important;outline-offset:-2px;}
+}
+
+/* v246: calmer desktop forms, large wide logo and tactile light-green controls. */
+@media screen and (min-width:900px){
+ body:not(:has(.app-shell)){background:#f1f4ee!important;}
+ body:not(:has(.app-shell)) .container,body:not(:has(.app-shell)) .form-container,body:not(:has(.app-shell)) .form-card{background-color:#f8faf6!important;}
+}
+@media screen{
+ #profile-dialog .profile-entry-logo{width:min(320px,85%);height:100px;object-fit:contain;margin:0 auto 24px;}
+ body button:not(:disabled):not(.danger):not(.delete-btn):not(.remove-btn):active,body .button:not([aria-disabled=true]):active{background:#c9dfa9!important;color:#203019!important;transform:translateY(2px) scale(.95)!important;}
+ body button,.button{transition:transform .32s cubic-bezier(.34,1.56,.64,1),background-color .22s ease,box-shadow .22s ease!important;}
+}
+@media(prefers-reduced-motion:reduce){body button,.button{transition:none!important;}body button:active,body .button:active{transform:none!important;}}
+/* Navigation uses one type scale across anchors, buttons and native summary. */
+@media screen{
+ #navigation{--nav-label-size:12px;}
+ #navigation>a,#navigation>button,#navigation .report-nav>summary,#navigation .report-submenu>a{font-family:Anuphan,Tahoma,sans-serif!important;font-size:var(--nav-label-size)!important;font-weight:500!important;line-height:1.5!important;}
+}
+@media screen and (min-width:900px){#navigation{--nav-label-size:18px;}}

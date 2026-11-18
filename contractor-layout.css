@@ -1,0 +1,100 @@
+/* Adapted from the actual contractor form's app-container/auth-section/form-section
+   geometry. Project content, authorization and PDF styles remain unchanged. */
+@media screen{
+ body{display:block;min-height:100vh;padding:20px!important;background:#f0f4f8!important;font:400 16px/1.6 Anuphan,Tahoma,sans-serif!important;color:#333!important}
+ .contractor-shell{width:100%;max-width:1050px;margin:40px auto;background:#fff;border-radius:12px;box-shadow:0 10px 30px #002d621a;overflow:hidden}
+ header{padding:40px 30px 20px!important;border-bottom:2px solid #dce1e6;background:#fff!important;text-align:center}
+ .division-logo{width:220px;max-width:80%;height:auto;margin:0 auto 20px!important}
+ header h1{font-size:22px;line-height:1.4;font-weight:500;margin:0 0 10px;color:#294d3c}
+ header p{font-size:14px;color:#666;line-height:1.6}header small{display:block;margin-bottom:8px;font-size:12px}
+ .layout{display:block;width:100%;margin:0;padding:30px!important;max-width:none}
+ .card{border:0!important;border-radius:0;padding:0!important;box-shadow:none!important;background:transparent!important;transform:none!important}
+ .continuous-section,.continuous-section+.continuous-section{padding:20px;margin:0 0 20px;border:1px solid #dce1e6;border-radius:8px;background:#fafbfc}
+ .continuous-section h2{font-size:20px;font-weight:600;color:#294d3c;margin:0 0 15px}
+ .fields{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:15px}
+ .field.full{grid-column:1/-1}.field{min-width:0}
+ label{font-size:16px!important;font-weight:400!important;color:#000;margin-bottom:6px}
+ input,select,textarea,.select-popup-trigger{font-size:16px!important;font-weight:400;padding:11px 12px!important;border:1px solid #dce1e6!important;border-radius:6px;line-height:1.5;color:#000;background:#fff}
+ input:focus,textarea:focus,.select-popup-trigger:focus-visible{outline:2px solid #a4c579;outline-offset:2px;border-color:#46752d!important}
+ input[readonly]{background:#e9ecef!important;color:#495057}
+ .help{font-size:12px!important;color:#666}.intro{font-size:14px!important;line-height:1.6}
+ .subcard{border:1px solid #dce1e6;background:#fff;border-radius:8px;padding:16px}
+ .toolbar{gap:10px;margin:0 0 20px;align-items:center}.toolbar button{padding:10px 16px;border-radius:6px}
+ #projectToolbar:empty,#pdfToolbar:empty{display:none}.actions{margin-top:20px;padding-top:20px}
+ .total{background:#edf4e6;border-radius:6px;padding:15px}
+ .months{min-width:520px}.months input{padding:0!important;min-height:18px!important}
+ #connect{min-height:46px;border-radius:6px}
+}
+@media screen and (max-width:600px){
+ body{padding:10px!important}.contractor-shell{margin:12px auto;border-radius:10px}
+ header{padding:28px 18px 20px!important}header h1{font-size:19px}.division-logo{width:200px}
+ .layout{padding:18px!important}.continuous-section,.continuous-section+.continuous-section{padding:16px;margin-bottom:16px}
+ .fields{grid-template-columns:minmax(0,1fr);gap:15px}.budget{grid-template-columns:1fr}
+ .continuous-section h2{font-size:18px}.toolbar{flex-wrap:wrap}.actions button{width:100%}
+}
+@media print{.contractor-shell{margin:0;max-width:none;border:0;box-shadow:none}}
+@media screen{
+ .continuous-section label,.continuous-section input,.continuous-section select,.continuous-section textarea,.continuous-section button,.continuous-section .select-popup-trigger{font-size:16px!important;line-height:1.5}
+}
+@media screen{
+ .filler-profile{padding:20px;margin-bottom:20px;background:#fff;border:1px solid #dce1e6;border-radius:8px}
+ .filler-profile h2{font-size:20px;color:#294d3c;margin:0 0 18px;font-weight:600}
+ .filler-profile dl{margin:0}.filler-profile dl>div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:10px;padding:12px 0;border-bottom:1px dashed #dce1e6}
+ .filler-profile dl>div:last-child{border:0}.filler-profile dt,.filler-profile dd{font-size:16px;line-height:1.5;margin:0;overflow-wrap:anywhere}.filler-profile dt{color:#52675d}
+}
+@media screen and (max-width:600px){.filler-profile{padding:16px}.filler-profile dl>div{grid-template-columns:1fr;gap:4px}}
+@media screen{
+ .month-popup-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .month-popup-grid .select-popup-choice{padding:9px 12px!important;min-height:44px;white-space:normal;font-size:16px!important}
+}
+@media screen and (max-width:400px){.month-popup-grid{gap:6px}.month-popup-grid .select-popup-choice{font-size:14px!important;padding:8px!important}}
+@media screen{
+ .continuous-section input:not([type=checkbox]),.continuous-section select,.continuous-section .select-popup-trigger{height:46px!important;min-height:46px!important;box-sizing:border-box}
+ .continuous-section textarea{min-height:110px!important;height:110px;resize:vertical;overflow:auto;box-sizing:border-box}
+ .continuous-section .field,.continuous-section .budget>div{min-width:0}
+ .continuous-section input:not([type=checkbox]),.continuous-section textarea,.continuous-section .select-popup-trigger{width:100%}
+}
+/* Match the supplied three-column, 46px field reference across form inputs. */
+@media screen{
+ .continuous-section .fields{grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+ .continuous-section .field.full{grid-column:auto}
+ .continuous-section textarea{height:46px!important;min-height:46px!important;resize:vertical;overflow:auto}
+ .continuous-section .subcard>input[data-act]{width:calc((100% - 30px)/3)}
+ .continuous-section .budget{grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+ .continuous-section .budget>.remove{justify-self:start;align-self:end;min-height:46px}
+ #activityNote,#budgetNote{width:100%}
+}
+@media screen and (max-width:760px){
+ .continuous-section .fields,.continuous-section .budget{grid-template-columns:1fr}
+ .continuous-section .subcard>input[data-act]{width:100%}
+}
+@media screen and (min-width:761px){.continuous-section>.field{width:calc((100% - 30px)/3)}}
+@media screen{.activity-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.subhead{gap:12px;flex-wrap:wrap}.activity-actions button{min-height:40px;padding:8px 12px!important}}
+@media screen{.continuous-section .fields>.field{width:100%;min-width:0}.continuous-section .fields>.field input{width:100%!important}}
+/* Activity note spans the entire section on desktop and mobile. */
+@media screen{.continuous-section>.field:has(#activityNote){width:100%!important;grid-column:1/-1}#activityNote{width:100%!important}}
+/* Darker screen typography; preserve error/warning meanings and disabled state. */
+@media screen{
+ body{color:#18231b!important;font-weight:500!important}
+ header h1,header p,.continuous-section h2,.filler-profile h2,.filler-profile dt,.filler-profile dd,.continuous-section label,.continuous-section .subhead,.continuous-section .total,.review,.review h2,.review h3,.review p,.review td,.review th{color:#18231b!important}
+ input,select,textarea,.select-popup-trigger,.select-popup-choice,dialog.select-popup{color:#18231b!important;font-weight:500!important}
+ input[readonly]{color:#29352d!important;background:#e9ecef!important}
+ input::placeholder,textarea::placeholder{color:#59665e!important;opacity:1}
+ .status{color:#294d3c}.error{color:#a13c2f!important}.pending-lock{color:#62431a!important}
+ button:disabled,input:disabled,textarea:disabled,select:disabled{color:#536057!important;opacity:.7!important}
+}
+@media screen{.budget-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;align-self:end}.budget-actions button{min-height:40px;padding:8px 12px!important}.budget-actions .remove{margin-left:0}}
+@media screen{.continuous-section .fields>.field:has(#evaluation){grid-column:1/-1;width:100%!important}#evaluation{width:100%!important}}
+@media screen{.continuous-section .subcard>input[data-act]{width:100%!important}}
+@media screen{
+ .actions #save{width:100%;min-height:50px;display:flex;justify-content:center;align-items:center;gap:14px}
+ .actions #save .mu-send-spinner{display:block;flex-shrink:0;width:44px;height:44px;margin:0;border:4px solid #e1ebdb;border-top-color:#46752d;border-radius:50%;animation:mu-send-spin .85s linear infinite}
+ @keyframes mu-send-spin{to{transform:rotate(360deg)}}
+}
+
+@media screen{.pdf-preview-modal{width:min(1000px,calc(100vw - 24px));max-height:94dvh;border:1px solid #dce1e6;border-radius:14px;padding:20px;color:#18231b}.pdf-preview-modal::backdrop{background:#18231880}.pdf-modal-header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}.pdf-modal-header h2{margin:0;font-size:21px}.pdf-preview-modal .pdf-preview{height:65dvh}.pdf-preview-modal>a{display:inline-block;margin:12px 12px 0 0;padding:10px 16px;border:1px solid #a4c579;border-radius:6px;color:#294d3c}.pdf-download-link{background:#edf4e6}}
+@media screen{.actions #save[aria-busy="true"]{opacity:1!important;background:#edf4e6!important;color:#244c24!important;cursor:wait}.actions #save[aria-busy="true"] .mu-send-spinner{border-color:#ccddc5;border-top-color:#265e20}}
+@media screen{.project-tools-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.project-tools-row #projectToolbar{flex:1;min-width:240px}.project-tools-row #pdfToolbar{flex:0 0 auto}.project-tools-row .toolbar{margin:0 0 16px}#pdfToolbar button{display:flex;align-items:center;justify-content:center;gap:8px}#pdfToolbar .mu-send-spinner{display:inline-block;width:24px;height:24px;border:3px solid #ccddc5;border-top-color:#265e20;border-radius:50%;animation:mu-send-spin .85s linear infinite}#pdfToolbar button[aria-busy="true"]{opacity:1!important} }
+
+/* v61 match fire form send-progress ring, including reduced-motion behavior. */
+.actions #save .mu-send-spinner{display:block;flex:0 0 44px;width:44px;height:44px;box-sizing:border-box;border:4px solid #e1ebdb;border-top-color:#46752d;border-radius:50%;animation:mu-send-spin .85s linear infinite!important;will-change:transform}
